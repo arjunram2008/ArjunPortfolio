@@ -1,0 +1,623 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: qa-responsive.spec.mjs >> portfolio responsive smoke test >> renders without console errors or horizontal overflow at 390px
+- Location: qa-responsive.spec.mjs:7:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation "Primary navigation" [ref=e5]:
+      - link "Arjun Ramesh home" [ref=e6] [cursor=pointer]:
+        - /url: "#home"
+        - img [ref=e8]
+      - button "Open navigation menu" [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+  - main [ref=e13]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - img [ref=e22]
+          - generic [ref=e25]: LinkedIn-grounded portfolio for recruiters, internships, and collaborators
+        - heading "Arjun Ramesh" [level=1] [ref=e26]:
+          - generic [ref=e27]: Arjun
+          - generic [ref=e28]: Ramesh
+        - generic "Professional headline" [ref=e29]:
+          - generic [ref=e30]: Senior at California High School
+          - generic [ref=e31]: Web Developer
+          - generic [ref=e32]: AI/ML Builder
+          - generic [ref=e33]: UI/UX Designer
+        - paragraph [ref=e34]: I build polished, human-centered technology across web, AI, accessibility, games, and social-impact projects — combining product instincts with hands-on engineering and leadership.
+        - generic [ref=e35]:
+          - link "View Work" [ref=e36] [cursor=pointer]:
+            - /url: "#projects"
+            - generic [ref=e37]: View Work
+            - img [ref=e38]
+          - link "Contact Me" [ref=e40] [cursor=pointer]:
+            - /url: mailto:arjunramesh8002@gmail.com
+            - generic [ref=e41]: Contact Me
+            - img [ref=e42]
+          - link "LinkedIn" [ref=e45] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/arjun-ramesh-b19481288
+            - generic [ref=e46]: LinkedIn
+            - img [ref=e47]
+      - complementary [ref=e51]:
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - paragraph [ref=e58]: Portfolio Signal
+              - paragraph [ref=e59]: Builder profile
+            - img [ref=e61]
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - paragraph [ref=e66]: 2+ yrs
+              - paragraph [ref=e67]: Web development at HelpingHands
+            - generic [ref=e68]:
+              - paragraph [ref=e69]: "4"
+              - paragraph [ref=e70]: Hackathon honors listed
+            - generic [ref=e71]:
+              - paragraph [ref=e72]: "5"
+              - paragraph [ref=e73]: AI / CS certifications listed
+          - generic [ref=e74]:
+            - paragraph [ref=e75]: Current headline
+            - paragraph [ref=e76]: Web developer, AI/ML builder, and design-minded high-school senior.
+            - paragraph [ref=e77]: San Ramon, California, United States
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - paragraph [ref=e81]: About
+        - heading "A builder at the intersection of AI, web, design, and service." [level=2] [ref=e82]
+        - paragraph [ref=e83]: The profile narrative below is rewritten from LinkedIn-listed experience, education, skills, awards, and community work — with no invented roles.
+      - generic [ref=e84]:
+        - generic [ref=e86]:
+          - paragraph [ref=e87]: "Arjun Ramesh is a San Ramon-based high-school senior who blends web development, AI/ML experimentation, UI/UX design, and community leadership. His profile shows a builder with range: leading a fundraising platform for underprivileged kids, developing AI-driven game systems, designing LLM-powered commerce experiences, building assistive technology programs, and competing with autonomous driving agents in CARLA."
+          - paragraph [ref=e88]: Across hackathons, volunteer work, Boy Scouts, Taekwondo instruction, Carnatic vocal performance, and entrepreneurship programs, Arjun’s story is anchored in discipline, service, creativity, and a strong bias toward building useful products.
+          - generic [ref=e89]:
+            - paragraph [ref=e90]: Source note
+            - paragraph [ref=e91]: Built from the attached LinkedIn profile export. A dedicated LinkedIn About section and standalone Projects section were not present, so those areas are written from listed roles, skills, awards, and education only.
+        - generic [ref=e92]:
+          - generic [ref=e95]:
+            - img [ref=e97]
+            - generic [ref=e109]:
+              - heading "AI products with UX taste" [level=3] [ref=e110]
+              - paragraph [ref=e111]: LLM features, MCP workflows, AI game systems, neural-network workshops, and human-centered UI/UX.
+          - generic [ref=e114]:
+            - img [ref=e116]
+            - generic [ref=e118]:
+              - heading "Technology for social impact" [level=3] [ref=e119]
+              - paragraph [ref=e120]: Fundraising for underprivileged kids, accessibility work for visually impaired communities, and volunteer leadership.
+          - generic [ref=e123]:
+            - img [ref=e125]
+            - generic [ref=e131]:
+              - heading "Competitive builder energy" [level=3] [ref=e132]
+              - paragraph [ref=e133]: Hackathon wins, autonomous racing, entrepreneurship programs, and fast-moving product projects.
+          - generic [ref=e136]:
+            - img [ref=e138]
+            - generic [ref=e144]:
+              - heading "Long-term craft and discipline" [level=3] [ref=e145]
+              - paragraph [ref=e146]: Boy Scouts, Taekwondo black belt, teaching assistant work, and Carnatic vocal performance over many years.
+    - generic [ref=e148]:
+      - generic [ref=e149]:
+        - paragraph [ref=e150]: Experience
+        - heading "A timeline of product-building, leadership, and long-term craft." [level=2] [ref=e151]
+        - paragraph [ref=e152]: Each item comes from the LinkedIn profile export and is rewritten into concise, recruiter-friendly impact language.
+      - list [ref=e155]:
+        - listitem [ref=e156]:
+          - article [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]:
+                - generic [ref=e161]: Web • Social Impact
+                - generic [ref=e162]: 2 years 11 months
+              - heading "Web Developer" [level=3] [ref=e163]
+              - paragraph [ref=e164]: HelpingHands
+              - generic [ref=e165]:
+                - generic [ref=e166]:
+                  - img [ref=e167]
+                  - text: August 2023 — Present
+                - generic [ref=e169]:
+                  - img [ref=e170]
+                  - text: Chennai, Tamil Nadu, India
+              - list [ref=e173]:
+                - listitem [ref=e174]:
+                  - generic [ref=e176]: Leading development of a crowd-fundraising app and website for underprivileged kids in Chennai.
+                - listitem [ref=e177]:
+                  - generic [ref=e179]: Creating engaging events and showcasing successful fundraisers to raise funds for specific causes.
+                - listitem [ref=e180]:
+                  - generic [ref=e182]: Preparing the app for upcoming availability on the App Store.
+          - img [ref=e184]
+        - listitem [ref=e188]:
+          - article [ref=e190]:
+            - generic [ref=e191]:
+              - generic [ref=e192]:
+                - generic [ref=e193]: Games • AI Systems
+                - generic [ref=e194]: 1 year 11 months
+              - heading "Game Dev and Design" [level=3] [ref=e195]
+              - paragraph [ref=e196]: Unity
+              - generic [ref=e197]:
+                - generic [ref=e198]:
+                  - img [ref=e199]
+                  - text: August 2024 — Present
+                - generic [ref=e201]:
+                  - img [ref=e202]
+                  - text: San Ramon, California
+              - list [ref=e205]:
+                - listitem [ref=e206]:
+                  - generic [ref=e208]: Developing a strategy game with AI implementations and extensive resource management systems.
+          - img [ref=e210]
+        - listitem [ref=e214]:
+          - article [ref=e216]:
+            - generic [ref=e217]:
+              - generic [ref=e218]:
+                - generic [ref=e219]: AI • UI/UX
+                - generic [ref=e220]: 5 months
+              - heading "AI/ML Engineer" [level=3] [ref=e221]
+              - paragraph [ref=e222]: True Fit
+              - generic [ref=e223]:
+                - generic [ref=e224]:
+                  - img [ref=e225]
+                  - text: July 2025 — November 2025
+                - generic [ref=e227]:
+                  - img [ref=e228]
+                  - text: San Ramon, California
+              - list [ref=e231]:
+                - listitem [ref=e232]:
+                  - generic [ref=e234]: Led UI/UX design for TrueFit Clothing Company, building responsive, user-centered interfaces to improve usability and customer experience.
+                - listitem [ref=e235]:
+                  - generic [ref=e237]: Implemented MCP server architecture to support scalable AI workflows and efficient data orchestration.
+                - listitem [ref=e238]:
+                  - generic [ref=e240]: Integrated LLM-powered features for intelligent recommendations and personalized user interactions.
+          - img [ref=e242]
+        - listitem [ref=e246]:
+          - article [ref=e248]:
+            - generic [ref=e249]:
+              - generic [ref=e250]:
+                - generic [ref=e251]: Leadership • Accessibility
+                - generic [ref=e252]: 1 year 8 months
+              - heading "Vice President" [level=3] [ref=e253]
+              - paragraph [ref=e254]: Blindev
+              - generic [ref=e255]:
+                - generic [ref=e256]:
+                  - img [ref=e257]
+                  - text: April 2024 — November 2025
+                - generic [ref=e259]:
+                  - img [ref=e260]
+                  - text: California, United States
+              - list [ref=e263]:
+                - listitem [ref=e264]:
+                  - generic [ref=e266]: Organized and led programs supporting individuals with disabilities in the Bay Area.
+                - listitem [ref=e267]:
+                  - generic [ref=e269]: Worked on projects involving a Raspberry Pi 4 Model B and attached camera module.
+                - listitem [ref=e270]:
+                  - generic [ref=e272]: Co-hosted and judged Hack for Hope, awarded $200 in prizes, and led a neural-networks workshop focused on visually impaired communities.
+          - img [ref=e274]
+        - listitem [ref=e278]:
+          - article [ref=e280]:
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - generic [ref=e283]: Autonomous Systems
+                - generic [ref=e284]: 2 months
+              - heading "ROAR Racing Competitor" [level=3] [ref=e285]
+              - paragraph [ref=e286]: University of California, Berkeley
+              - generic [ref=e287]:
+                - generic [ref=e288]:
+                  - img [ref=e289]
+                  - text: June 2025 — July 2025
+                - generic [ref=e291]:
+                  - img [ref=e292]
+                  - text: Berkeley / Remote Simulation
+              - list [ref=e295]:
+                - listitem [ref=e296]:
+                  - generic [ref=e298]: Designed and implemented a Python-based AI driving agent in CARLA for UC Berkeley’s Summer 2025 ROAR Simulation Racing Series.
+                - listitem [ref=e299]:
+                  - generic [ref=e301]: Focused on autonomous laps on Monza v1.1 using waypoint navigation, PID control tuning, and real-time vehicle telemetry integration.
+          - img [ref=e303]
+        - listitem [ref=e307]:
+          - article [ref=e309]:
+            - generic [ref=e310]:
+              - generic [ref=e311]:
+                - generic [ref=e312]: Leadership • Business
+                - generic [ref=e313]: 2 months
+              - heading "JA Summer Leadership Program" [level=3] [ref=e314]
+              - paragraph [ref=e315]: Junior Achievement of Northern California
+              - generic [ref=e316]:
+                - generic [ref=e317]:
+                  - img [ref=e318]
+                  - text: June 2024 — July 2024
+                - generic [ref=e320]:
+                  - img [ref=e321]
+                  - text: San Francisco, California
+              - list [ref=e324]:
+                - listitem [ref=e325]:
+                  - generic [ref=e327]: Job-shadowed at top companies in San Francisco to learn office dynamics, technologies, and market strategies.
+                - listitem [ref=e328]:
+                  - generic [ref=e330]: Participated in workshops and a Social Innovation Challenge, strengthening creative problem-solving skills.
+          - img [ref=e332]
+        - listitem [ref=e336]:
+          - article [ref=e338]:
+            - generic [ref=e339]:
+              - generic [ref=e340]:
+                - generic [ref=e341]: Entrepreneurship
+                - generic [ref=e342]: 8 months
+              - heading "Sales Marketing Management" [level=3] [ref=e343]
+              - paragraph [ref=e344]: Junior Achievement USA
+              - generic [ref=e345]:
+                - generic [ref=e346]:
+                  - img [ref=e347]
+                  - text: October 2023 — May 2024
+                - generic [ref=e349]:
+                  - img [ref=e350]
+                  - text: California, United States
+              - list [ref=e353]:
+                - listitem [ref=e354]:
+                  - generic [ref=e356]: Worked in a Bay Area student entrepreneurship program where teams created products and competed against one another.
+          - img [ref=e358]
+        - listitem [ref=e362]:
+          - article [ref=e364]:
+            - generic [ref=e365]:
+              - generic [ref=e366]:
+                - generic [ref=e367]: Service • Leadership
+                - generic [ref=e368]: 10 years 3 months
+              - heading "Boy Scouts of America" [level=3] [ref=e369]
+              - paragraph [ref=e370]: Boy Scouts of America
+              - generic [ref=e371]:
+                - generic [ref=e372]:
+                  - img [ref=e373]
+                  - text: April 2016 — Present
+                - generic [ref=e375]:
+                  - img [ref=e376]
+                  - text: California, United States
+              - list [ref=e379]:
+                - listitem [ref=e380]:
+                  - generic [ref=e382]: Life Scout, soon to be Eagle Scout in Troop 84.
+          - img [ref=e384]
+        - listitem [ref=e388]:
+          - article [ref=e390]:
+            - generic [ref=e391]:
+              - generic [ref=e392]:
+                - generic [ref=e393]: Teaching • Discipline
+                - generic [ref=e394]: 10 years 5 months
+              - heading "Taekwondo Instructor / Black Belt" [level=3] [ref=e395]
+              - paragraph [ref=e396]: ATA American Taekwondo Association
+              - generic [ref=e397]:
+                - generic [ref=e398]:
+                  - img [ref=e399]
+                  - text: February 2016 — Present
+                - generic [ref=e401]:
+                  - img [ref=e402]
+                  - text: California, United States
+              - list [ref=e405]:
+                - listitem [ref=e406]:
+                  - generic [ref=e408]: Earned First Degree Black Belt after thousands of hours of practice, determination, and persistence.
+                - listitem [ref=e409]:
+                  - generic [ref=e411]: Continued as a teaching assistant after earning black belt, guiding young students in form and technique while supporting the lead instructor.
+          - img [ref=e413]
+        - listitem [ref=e417]:
+          - article [ref=e419]:
+            - generic [ref=e420]:
+              - generic [ref=e421]:
+                - generic [ref=e422]: Performance • Culture
+                - generic [ref=e423]: 10 years
+              - heading "Carnatic Vocalist" [level=3] [ref=e424]
+              - paragraph [ref=e425]: Lakshmi Music Academy
+              - generic [ref=e426]:
+                - generic [ref=e427]:
+                  - img [ref=e428]
+                  - text: July 2016 — Present
+                - generic [ref=e430]:
+                  - img [ref=e431]
+                  - text: San Ramon, California
+              - list [ref=e434]:
+                - listitem [ref=e435]:
+                  - generic [ref=e437]: Trained in Carnatic vocal music for 8 years, earning “Outstanding” distinctions in the first two levels of formal examinations.
+                - listitem [ref=e438]:
+                  - generic [ref=e440]: Performed at San Ramon Cultural Community Center, Rajarajeshwari Temple, Sai Baba Temple, and Bridge Academy’s Margazhi Utsavam 2025.
+          - img [ref=e442]
+    - generic [ref=e447]:
+      - generic [ref=e448]:
+        - paragraph [ref=e449]: Selected Work
+        - heading "Project cards shaped from real LinkedIn-listed work." [level=2] [ref=e450]
+        - paragraph [ref=e451]: No standalone Projects section appeared in the export, so these are portfolio case-study placeholders derived from listed roles and responsibilities. Replace links or screenshots later as needed.
+      - generic [ref=e452]:
+        - generic [ref=e455]:
+          - generic [ref=e456]:
+            - img [ref=e458]
+            - generic [ref=e461]: LinkedIn experience
+          - generic [ref=e462]:
+            - paragraph [ref=e463]: Social-impact web/app product
+            - heading "HelpingHands Fundraising Platform" [level=3] [ref=e464]
+            - paragraph [ref=e465]: A crowd-fundraising experience for underprivileged kids in Chennai, centered on event storytelling, cause pages, and successful fundraiser showcases.
+          - generic [ref=e466]:
+            - generic [ref=e467]:
+              - generic [ref=e468]: Web Design
+              - generic [ref=e469]: Fundraising UX
+              - generic [ref=e470]: App Product
+              - generic [ref=e471]: Social Impact
+            - generic [ref=e472]:
+              - generic [ref=e473]: No public link listed yet
+              - img [ref=e474]
+        - generic [ref=e479]:
+          - generic [ref=e480]:
+            - img [ref=e482]
+            - generic [ref=e492]: LinkedIn experience
+          - generic [ref=e493]:
+            - paragraph [ref=e494]: Game systems + AI
+            - heading "AI Strategy Game" [level=3] [ref=e495]
+            - paragraph [ref=e496]: A strategy game project with AI implementations and extensive resource-management mechanics, listed under Unity game development and design.
+          - generic [ref=e497]:
+            - generic [ref=e498]:
+              - generic [ref=e499]: Unity
+              - generic [ref=e500]: AI Systems
+              - generic [ref=e501]: Game Design
+              - generic [ref=e502]: Resource Management
+            - generic [ref=e503]:
+              - generic [ref=e504]: No public link listed yet
+              - img [ref=e505]
+        - generic [ref=e510]:
+          - generic [ref=e511]:
+            - img [ref=e513]
+            - generic [ref=e516]: LinkedIn experience
+          - generic [ref=e517]:
+            - paragraph [ref=e518]: AI commerce interface
+            - heading "TrueFit Intelligent Shopping UX" [level=3] [ref=e519]
+            - paragraph [ref=e520]: Responsive, user-centered interfaces paired with MCP server architecture and LLM-powered recommendation flows for personalized interactions.
+          - generic [ref=e521]:
+            - generic [ref=e522]:
+              - generic [ref=e523]: UI/UX
+              - generic [ref=e524]: MCP
+              - generic [ref=e525]: LLMs
+              - generic [ref=e526]: AI Recommendations
+            - generic [ref=e527]:
+              - generic [ref=e528]: No public link listed yet
+              - img [ref=e529]
+        - generic [ref=e534]:
+          - generic [ref=e535]:
+            - img [ref=e537]
+            - generic [ref=e540]: LinkedIn experience
+          - generic [ref=e541]:
+            - paragraph [ref=e542]: Python + CARLA simulation
+            - heading "ROAR Autonomous Racing Agent" [level=3] [ref=e543]
+            - paragraph [ref=e544]: A Python AI driving agent for UC Berkeley’s ROAR Simulation Racing Series, tuned around waypoint navigation, PID control, and live telemetry.
+          - generic [ref=e545]:
+            - generic [ref=e546]:
+              - generic [ref=e547]: Python
+              - generic [ref=e548]: CARLA
+              - generic [ref=e549]: PID Control
+              - generic [ref=e550]: Telemetry
+            - generic [ref=e551]:
+              - generic [ref=e552]: No public link listed yet
+              - img [ref=e553]
+        - generic [ref=e558]:
+          - generic [ref=e559]:
+            - img [ref=e561]
+            - generic [ref=e564]: LinkedIn experience
+          - generic [ref=e565]:
+            - paragraph [ref=e566]: Accessibility + hardware
+            - heading "Blindev Assistive Tech Programs" [level=3] [ref=e567]
+            - paragraph [ref=e568]: Leadership work supporting people with disabilities through projects involving Raspberry Pi 4 Model B, camera modules, and neural-network education.
+          - generic [ref=e569]:
+            - generic [ref=e570]:
+              - generic [ref=e571]: Accessibility
+              - generic [ref=e572]: Raspberry Pi 4
+              - generic [ref=e573]: Camera Module
+              - generic [ref=e574]: Neural Networks
+            - generic [ref=e575]:
+              - generic [ref=e576]: No public link listed yet
+              - img [ref=e577]
+    - generic [ref=e581]:
+      - generic [ref=e582]:
+        - paragraph [ref=e583]: Skills
+        - 'heading "A practical toolkit: technical, creative, and leadership-oriented." [level=2] [ref=e584]'
+        - paragraph [ref=e585]: The first group is the exact Top Skills block from LinkedIn. The remaining groups are carefully derived from listed roles, certifications, languages, and accomplishments.
+      - generic [ref=e586]:
+        - generic [ref=e588]:
+          - generic [ref=e589]:
+            - img [ref=e591]
+            - heading "Featured LinkedIn Skills" [level=3] [ref=e594]
+          - generic [ref=e595]:
+            - generic [ref=e596]: Anthropic Claude
+            - generic [ref=e597]: Claude Skills
+            - generic [ref=e598]: Web Design
+        - generic [ref=e600]:
+          - generic [ref=e601]:
+            - img [ref=e603]
+            - heading "AI & Machine Learning" [level=3] [ref=e606]
+          - generic [ref=e607]:
+            - generic [ref=e608]: Generative AI
+            - generic [ref=e609]: AI Fluency
+            - generic [ref=e610]: LLM-powered features
+            - generic [ref=e611]: MCP server architecture
+            - generic [ref=e612]: Neural networks
+            - generic [ref=e613]: AI game systems
+        - generic [ref=e615]:
+          - generic [ref=e616]:
+            - img [ref=e618]
+            - heading "Programming & Technical Tools" [level=3] [ref=e622]
+          - generic [ref=e623]:
+            - generic [ref=e624]: Python
+            - generic [ref=e625]: CARLA
+            - generic [ref=e626]: PID control
+            - generic [ref=e627]: Vehicle telemetry
+            - generic [ref=e628]: Raspberry Pi 4 Model B
+            - generic [ref=e629]: Camera modules
+            - generic [ref=e630]: Unity
+        - generic [ref=e632]:
+          - generic [ref=e633]:
+            - img [ref=e635]
+            - heading "Design & Product" [level=3] [ref=e641]
+          - generic [ref=e642]:
+            - generic [ref=e643]: UI/UX design
+            - generic [ref=e644]: Responsive interfaces
+            - generic [ref=e645]: Fundraising UX
+            - generic [ref=e646]: Resource management systems
+            - generic [ref=e647]: Customer experience
+        - generic [ref=e649]:
+          - generic [ref=e650]:
+            - img [ref=e652]
+            - heading "Business, Leadership & Community" [level=3] [ref=e656]
+          - generic [ref=e657]:
+            - generic [ref=e658]: Program leadership
+            - generic [ref=e659]: Workshop facilitation
+            - generic [ref=e660]: Hackathon judging
+            - generic [ref=e661]: Entrepreneurship
+            - generic [ref=e662]: Sales marketing management
+            - generic [ref=e663]: Teaching assistantship
+        - generic [ref=e665]:
+          - generic [ref=e666]:
+            - img [ref=e668]
+            - heading "Languages & Creative Discipline" [level=3] [ref=e672]
+          - generic [ref=e673]:
+            - generic [ref=e674]: Tamil — Native or bilingual
+            - generic [ref=e675]: Sanskrit — Full professional
+            - generic [ref=e676]: Spanish — Limited working
+            - generic [ref=e677]: Carnatic vocal performance
+    - generic [ref=e679]:
+      - generic [ref=e680]:
+        - paragraph [ref=e681]: Education
+        - heading "Academic path and formal learning." [level=2] [ref=e682]
+        - paragraph [ref=e683]: Education details are shown exactly where LinkedIn provided them. The BYU entry is intentionally preserved as a fill-in placeholder because details were not included in the export.
+      - generic [ref=e684]:
+        - generic [ref=e687]:
+          - img [ref=e689]
+          - generic [ref=e692]:
+            - paragraph [ref=e693]: 2022 — 2026
+            - heading "California High School (San Ramon, CA)" [level=3] [ref=e694]
+            - paragraph [ref=e695]: High School
+            - paragraph [ref=e696]: LinkedIn headline lists Arjun as a senior at California High School.
+        - generic [ref=e699]:
+          - img [ref=e701]
+          - generic [ref=e704]:
+            - paragraph [ref=e705]: June 2023 — July 2023
+            - heading "University of California, Berkeley" [level=3] [ref=e706]
+            - paragraph [ref=e707]: Computer Science
+            - paragraph [ref=e708]: Computer Science coursework / program listed in the LinkedIn education section.
+        - generic [ref=e711]:
+          - img [ref=e713]
+          - generic [ref=e716]:
+            - paragraph [ref=e717]: August 2021 — May 2024
+            - heading "Samskrita Bharati" [level=3] [ref=e718]
+            - paragraph [ref=e719]: Sanskrit and Classical Indian Languages, Literatures, and Linguistics
+            - paragraph [ref=e720]: Formal language and classical studies listed in education.
+        - generic [ref=e723]:
+          - img [ref=e725]
+          - generic [ref=e727]:
+            - paragraph [ref=e728]: Add dates
+            - heading "Brigham Young University" [level=3] [ref=e729]
+            - paragraph [ref=e730]: Details not listed in LinkedIn export
+            - paragraph [ref=e731]: Placeholder preserved because the school appears in LinkedIn education without degree or date details.
+    - generic [ref=e733]:
+      - generic [ref=e734]:
+        - paragraph [ref=e735]: Highlights
+        - heading "Awards, certifications, and proof points." [level=2] [ref=e736]
+        - paragraph [ref=e737]: A polished snapshot of the achievements listed on LinkedIn — formatted for fast recruiter scanning.
+      - generic [ref=e738]:
+        - generic [ref=e740]:
+          - img [ref=e742]
+          - paragraph [ref=e745]: "4"
+          - heading "Hackathon honors" [level=3] [ref=e746]
+          - paragraph [ref=e747]: Including best website, best UI/UX finalist recognition, and CodeForCause track win.
+        - generic [ref=e749]:
+          - img [ref=e751]
+          - paragraph [ref=e754]: "5"
+          - heading "AI / CS certifications" [level=3] [ref=e755]
+          - paragraph [ref=e756]: Python, generative AI, AI fluency, AI Scholars, and Claude 101 credentials listed.
+        - generic [ref=e758]:
+          - img [ref=e760]
+          - paragraph [ref=e763]: 10+
+          - heading "Years of service & craft" [level=3] [ref=e764]
+          - paragraph [ref=e765]: Long-running commitments across Scouts, Taekwondo, and Carnatic vocal music.
+        - generic [ref=e767]:
+          - img [ref=e769]
+          - paragraph [ref=e774]: $200
+          - heading "Hack for Hope prizes" [level=3] [ref=e775]
+          - paragraph [ref=e776]: Awarded to top solutions during Blindev accessibility-focused hackathon work.
+      - generic [ref=e777]:
+        - generic [ref=e779]:
+          - heading "Awards & honors" [level=3] [ref=e780]
+          - list [ref=e781]:
+            - listitem [ref=e782]:
+              - img [ref=e783]
+              - generic [ref=e786]: 3rd Place at LancerHacks VII
+            - listitem [ref=e787]:
+              - img [ref=e788]
+              - generic [ref=e791]: Best Website at Berkeley ANova Hacks
+            - listitem [ref=e792]:
+              - img [ref=e793]
+              - generic [ref=e796]: Finalist and best UI/UX at HackaKhan
+            - listitem [ref=e797]:
+              - img [ref=e798]
+              - generic [ref=e801]: Winner of the CodeForCause Track at Milpitas Hacks
+            - listitem [ref=e802]:
+              - img [ref=e803]
+              - generic [ref=e806]: Volunteer Appreciation Award
+        - generic [ref=e808]:
+          - heading "Certifications" [level=3] [ref=e809]
+          - list [ref=e810]:
+            - listitem [ref=e811]:
+              - img [ref=e812]
+              - generic [ref=e815]: AP Computer Science (Python Certification)
+            - listitem [ref=e816]:
+              - img [ref=e817]
+              - generic [ref=e820]: What Is Generative AI?
+            - listitem [ref=e821]:
+              - img [ref=e822]
+              - generic [ref=e825]: "Certificate of Completion: AI Fluency Framework & Foundations"
+            - listitem [ref=e826]:
+              - img [ref=e827]
+              - generic [ref=e830]: AI Scholars
+            - listitem [ref=e831]:
+              - img [ref=e832]
+              - generic [ref=e835]: "Certificate of Completion: Claude 101"
+    - generic [ref=e837]:
+      - generic [ref=e841]:
+        - generic [ref=e842]:
+          - paragraph [ref=e843]: Contact
+          - heading "Let’s build something useful, polished, and ambitious." [level=2] [ref=e844]
+          - paragraph [ref=e845]: Open to internships, collaborations, hackathon teams, product-building opportunities, and conversations around AI, web, accessibility, design, and social-impact technology.
+          - generic [ref=e846]:
+            - link "Email Arjun" [ref=e847] [cursor=pointer]:
+              - /url: mailto:arjunramesh8002@gmail.com
+              - generic [ref=e848]: Email Arjun
+              - img [ref=e849]
+            - link "Connect on LinkedIn" [ref=e852] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/arjun-ramesh-b19481288
+              - generic [ref=e853]: Connect on LinkedIn
+              - img [ref=e854]
+        - generic [ref=e858]:
+          - link "Email arjunramesh8002@gmail.com" [ref=e859] [cursor=pointer]:
+            - /url: mailto:arjunramesh8002@gmail.com
+            - generic [ref=e860]:
+              - img [ref=e862]
+              - generic [ref=e865]:
+                - generic [ref=e866]: Email
+                - generic [ref=e867]: arjunramesh8002@gmail.com
+            - img [ref=e868]
+          - link "LinkedIn linkedin.com/in/arjun-ramesh-b19481288" [ref=e871] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/arjun-ramesh-b19481288
+            - generic [ref=e872]:
+              - img [ref=e874]
+              - generic [ref=e878]:
+                - generic [ref=e879]: LinkedIn
+                - generic [ref=e880]: linkedin.com/in/arjun-ramesh-b19481288
+            - img [ref=e881]
+          - generic [ref=e884]:
+            - img [ref=e886]
+            - generic [ref=e889]:
+              - generic [ref=e890]: Location
+              - generic [ref=e891]: San Ramon, California, United States
+      - generic [ref=e892]:
+        - paragraph [ref=e893]: © 2026 Arjun Ramesh. Built with React, Tailwind CSS, Framer Motion, and Lucide React.
+        - link "Back to top ↑" [ref=e894] [cursor=pointer]:
+          - /url: "#home"
+```
