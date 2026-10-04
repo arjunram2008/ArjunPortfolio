@@ -15,12 +15,12 @@ npm run dev
 
 The biography, experience, skills, awards, and project outcomes come from `ArjunResumeSC4.pdf`, supplied October 3, 2026. Edit `src/data/profileData.js` for project and experience updates. The downloadable resume is `public/Arjun-Ramesh-Resume.pdf`.
 
-Project artwork is illustrative, not a screenshot of a shipped product. All illustrations live in `public/images`.
+Project artwork is illustrative, not a screenshot of a shipped product. Project illustrations live in `public/images`; the animated landing-page diagram lives in `src/components/DrivingPath.jsx`.
 
 ## Motion and accessibility
 
 - Native wheel/touch scrolling avoids artificial input delay. Anchors and gallery buttons retain smooth scrolling.
-- Native CSS scroll timelines drive hero rotation/parallax, project-image transforms, the progress bar, and the desktop ribbon on supported browsers. Motion supplies a compatibility fallback and viewport reveals.
+- Native CSS scroll timelines drive hero parallax, project-image transforms, the progress bar, and the desktop ribbon on supported browsers. Motion supplies a compatibility fallback and viewport reveals.
 - The desktop image ribbon moves horizontally as the page scrolls. Mobile uses a native swipeable gallery.
 - Reduced motion disables parallax, reveals, smooth anchor scrolling, and pinned scrolling. The ribbon becomes a static gallery.
 - A footer control lets visitors reduce motion for the current visit. System reduced-motion preferences are respected automatically.
@@ -40,4 +40,6 @@ Design references studied: [Dennis Snellenberg](https://dennissnellenberg.com) f
 
 ## Performance
 
-The dense 3,600-polygon hero SVG remains as editable source, but the page serves responsive transparent WebP renders (32 KB at 640px / 58 KB at 1120px rather than 540 KB of SVG). Only transform and opacity properties animate. Native scroll timelines replace per-frame JavaScript scroll measurements on supporting browsers. The fallback retains the same transforms on browsers without CSS scroll timelines. Timeline insets are explicitly zero so anchor scroll padding does not shift the effect ranges. Mobile keeps native horizontal scroll snapping instead of the desktop timeline.
+The hero uses a lightweight inline SVG driving diagram instead of dense 3D artwork. A small vehicle follows the circuit using native SVG motion, without a JavaScript frame loop. Its animation stops when offscreen, when the browser tab is hidden, or when motion is reduced. The name types once on load using CSS opacity steps; all letters reserve their final space, and the complete heading remains available to screen readers. Reduced motion shows the full name immediately.
+
+Native scroll timelines replace per-frame JavaScript scroll measurements on supporting browsers. The fallback retains the same transforms on browsers without CSS scroll timelines. Timeline insets are explicitly zero so anchor scroll padding does not shift the effect ranges. Mobile keeps native horizontal scroll snapping instead of the desktop timeline.

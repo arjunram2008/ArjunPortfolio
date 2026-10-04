@@ -23,6 +23,8 @@ import {
   awards,
   profile,
 } from "./data/profileData";
+import HeroName from "./components/HeroName";
+import DrivingPath from "./components/DrivingPath";
 import "./App.css";
 
 const ease = [0.22, 1, 0.36, 1];
@@ -40,8 +42,8 @@ const scrollRanges = {
     offset: ["start start", "end start"],
     input: [0, 1],
     output: [
-      "translate3d(0, 0px, 0) rotate(-10deg)",
-      "translate3d(0, 120px, 0) rotate(18deg)",
+      "translate3d(0, 0px, 0) rotate(-3deg)",
+      "translate3d(0, 120px, 0) rotate(3deg)",
     ],
   },
   project: {
@@ -185,18 +187,14 @@ function Navigation() {
 
 function Hero() {
   const ref = useRef(null);
+  const reduced = useContext(MotionPreference);
   return (
     <section id="home" ref={ref} className="hero page-width">
       <Reveal className="hero-eyebrow">
         <span className="status-dot" /> Computer Engineering at UC Santa Cruz{" "}
         <span className="edition">Portfolio / 2026</span>
       </Reveal>
-      <Reveal delay={0.08}>
-        <h1 className="hero-name">
-          Arjun <em>Ramesh</em>
-          <span className="name-period">.</span>
-        </h1>
-      </Reveal>
+      <HeroName />
       <div className="hero-body">
         <div className="hero-copy">
           <Reveal delay={0.18}>
@@ -228,18 +226,8 @@ function Hero() {
           className="hero-art"
           aria-hidden="true"
         >
-          <img
-            src="/images/orbit.webp"
-            srcSet="/images/orbit-640.webp 640w, /images/orbit.webp 1120w"
-            sizes="(max-width: 760px) 380px, (max-width: 1100px) 50vw, 560px"
-            width="1120"
-            height="1120"
-            alt=""
-            fetchPriority="high"
-          />
-          <span className="art-coordinate">
-            FIG. 01 / A CHANGE IN PERSPECTIVE
-          </span>
+          <DrivingPath reduced={reduced} />
+          <span className="art-coordinate">FIG. 01 / FINDING THE LINE</span>
         </ScrollVisual>
       </div>
       <div className="hero-footer">

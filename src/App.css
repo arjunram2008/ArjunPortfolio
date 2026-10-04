@@ -1197,10 +1197,10 @@
 }
 @keyframes hero-parallax {
   from {
-    transform: translate3d(0, 0, 0) rotate(-10deg);
+    transform: translate3d(0, 0, 0) rotate(-3deg);
   }
   to {
-    transform: translate3d(0, 120px, 0) rotate(18deg);
+    transform: translate3d(0, 120px, 0) rotate(3deg);
   }
 }
 @keyframes project-parallax {
@@ -1255,11 +1255,110 @@
     animation-range: contain 0% contain 100%;
   }
 }
-/* Reserve a raster layer for the hero, avoiding SVG retessellation on rotation. */
+/* Keep the lightweight driving diagram on its own scroll transform layer. */
 .motion-enabled .hero-art {
   will-change: transform;
 }
 .motion-reduced .project-image > img,
 .motion-reduced .ribbon-track {
   will-change: auto;
+}
+
+/* Each glyph occupies its final width throughout the one-time typing reveal. */
+.typing-glyph {
+  display: inline-block;
+  position: relative;
+  white-space: pre;
+}
+.motion-enabled .typing-glyph {
+  opacity: 0;
+  animation: type-glyph 1ms step-end forwards;
+  animation-delay: calc(0.35s + var(--glyph-index) * 0.095s);
+}
+.motion-enabled .typing-glyph::after {
+  content: "";
+  position: absolute;
+  top: 0.21em;
+  right: -0.045em;
+  width: 2px;
+  height: 0.72em;
+  background: var(--accent);
+  opacity: 0;
+  animation: type-caret 0.095s step-end;
+  animation-delay: calc(0.35s + var(--glyph-index) * 0.095s);
+}
+.motion-enabled .name-period .typing-glyph::after {
+  animation: type-caret-finish 1.1s step-end;
+  animation-delay: 1.49s;
+}
+@keyframes type-glyph {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes type-caret {
+  0%,
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes type-caret-finish {
+  0%,
+  40%,
+  80% {
+    opacity: 1;
+  }
+  20%,
+  60%,
+  100% {
+    opacity: 0;
+  }
+}
+.driving-study {
+  aspect-ratio: 1;
+  width: 100%;
+}
+.driving-diagram {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.driving-labels {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  fill: var(--muted);
+}
+.driving-kicker {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+.driving-waypoint-labels {
+  font-size: 9px;
+  letter-spacing: 0.07em;
+}
+.driving-annotation {
+  fill: var(--ink);
+  font-size: 21px;
+  letter-spacing: -0.03em;
+}
+.driving-annotation .driving-kicker {
+  fill: var(--muted);
+  letter-spacing: 0.06em;
+}
+@media (max-width: 760px) {
+  .driving-study {
+    height: 340px;
+    aspect-ratio: auto;
+  }
+  .typing-glyph::after {
+    width: 1px;
+  }
+}
+
+.motion-enabled .typing-complete .typing-glyph {
+  animation: none;
+  opacity: 1;
 }
