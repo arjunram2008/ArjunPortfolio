@@ -206,6 +206,7 @@
   margin-top: -40px;
 }
 .hero-art img {
+  height: auto;
   aspect-ratio: 1;
   object-fit: contain;
 }
@@ -1183,4 +1184,82 @@
   .footer-line a {
     gap: 3px;
   }
+}
+
+/* Only transforms are animated: scroll timelines can run independently of JS. */
+@keyframes page-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes hero-parallax {
+  from {
+    transform: translate3d(0, 0, 0) rotate(-10deg);
+  }
+  to {
+    transform: translate3d(0, 120px, 0) rotate(18deg);
+  }
+}
+@keyframes project-parallax {
+  0% {
+    transform: translate3d(0, -7%, 0) scale(1.12);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(0, 7%, 0) scale(1.08);
+  }
+}
+@keyframes ribbon-pan {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(var(--ribbon-distance), 0, 0);
+  }
+}
+.native-scroll.motion-enabled .scroll-progress {
+  animation: page-progress linear both;
+  animation-timeline: scroll(root block);
+}
+.native-scroll.motion-enabled .hero {
+  view-timeline: --hero-scroll block;
+  view-timeline-inset: 0;
+}
+.native-scroll.motion-enabled .hero-art {
+  animation: hero-parallax linear both;
+  animation-timeline: --hero-scroll;
+  animation-range: exit-crossing 0% exit-crossing 100%;
+}
+.native-scroll.motion-enabled .project {
+  view-timeline: --project-scroll block;
+  view-timeline-inset: 0;
+}
+.native-scroll.motion-enabled .project-image > img {
+  animation: project-parallax linear both;
+  animation-timeline: --project-scroll;
+  animation-range: cover 0% cover 100%;
+}
+@media (min-width: 761px) {
+  .native-scroll.motion-enabled .ribbon-section {
+    view-timeline: --ribbon-scroll block;
+    view-timeline-inset: 0;
+  }
+  .native-scroll.motion-enabled .ribbon-track {
+    animation: ribbon-pan linear both;
+    animation-timeline: --ribbon-scroll;
+    animation-range: contain 0% contain 100%;
+  }
+}
+/* Reserve a raster layer for the hero, avoiding SVG retessellation on rotation. */
+.motion-enabled .hero-art {
+  will-change: transform;
+}
+.motion-reduced .project-image > img,
+.motion-reduced .ribbon-track {
+  will-change: auto;
 }

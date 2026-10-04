@@ -19,6 +19,7 @@
 }
 html {
   scroll-padding-top: 100px;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -84,4 +85,8 @@ summary {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+html:has(.motion-reduced) {
+  scroll-behavior: auto;
 }

@@ -6,8 +6,6 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import Lenis from "lenis";
-import "lenis/dist/lenis.css";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -29,6 +27,88 @@ import "./App.css";
 
 const ease = [0.22, 1, 0.36, 1];
 const MotionPreference = createContext(false);
+// Native timelines keep scroll-linked transforms on the compositor. Only mount
+// the Motion scroll listeners on browsers that need the compatibility fallback.
+const nativeScroll =
+  typeof CSS !== "undefined" &&
+  CSS.supports("view-timeline", "--section block") &&
+  CSS.supports("animation-timeline", "view()") &&
+  CSS.supports("animation-range", "exit-crossing 0% exit-crossing 100%");
+
+const scrollRanges = {
+  hero: {
+    offset: ["start start", "end start"],
+    input: [0, 1],
+    output: [
+      "translate3d(0, 0px, 0) rotate(-10deg)",
+      "translate3d(0, 120px, 0) rotate(18deg)",
+    ],
+  },
+  project: {
+    offset: ["start end", "end start"],
+    input: [0, 0.5, 1],
+    output: [
+      "translate3d(0, -7%, 0) scale(1.12)",
+      "translate3d(0, 0%, 0) scale(1)",
+      "translate3d(0, 7%, 0) scale(1.08)",
+    ],
+  },
+  ribbon: { offset: ["start start", "end end"], input: [0, 1] },
+};
+
+function ScrollFallback({ kind, target, distance, image, ...props }) {
+  const range = scrollRanges[kind];
+  const { scrollYProgress } = useScroll({ target, offset: range.offset });
+  const transform = useTransform(
+    scrollYProgress,
+    range.input,
+    range.output || [
+      "translate3d(0px, 0, 0)",
+      `translate3d(${-distance}px, 0, 0)`,
+    ],
+  );
+  const Component = image ? motion.img : motion.div;
+  return <Component {...props} style={{ transform }} />;
+}
+
+function ScrollVisual({ kind, target, distance = 0, image = false, ...props }) {
+  const reduced = useContext(MotionPreference);
+  if (!nativeScroll && !reduced) {
+    return (
+      <ScrollFallback
+        {...props}
+        kind={kind}
+        target={target}
+        distance={distance}
+        image={image}
+      />
+    );
+  }
+  const Component = image ? "img" : "div";
+  return (
+    <Component
+      {...props}
+      style={
+        kind === "ribbon"
+          ? { "--ribbon-distance": `${-distance}px` }
+          : undefined
+      }
+    />
+  );
+}
+
+function ProgressFallback() {
+  const reduced = useContext(MotionPreference);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
+  return (
+    <motion.div
+      className="scroll-progress"
+      style={{ scaleX: reduced ? scrollYProgress : scaleX }}
+      aria-hidden="true"
+    />
+  );
+}
 
 function Reveal({ children, className = "", delay = 0 }) {
   const reduced = useContext(MotionPreference);
@@ -105,13 +185,6 @@ function Navigation() {
 
 function Hero() {
   const ref = useRef(null);
-  const reduced = useContext(MotionPreference);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [-10, 18]);
   return (
     <section id="home" ref={ref} className="hero page-width">
       <Reveal className="hero-eyebrow">
@@ -149,16 +222,25 @@ function Hero() {
             </a>
           </Reveal>
         </div>
-        <motion.div
+        <ScrollVisual
+          kind="hero"
+          target={ref}
           className="hero-art"
-          style={reduced ? {} : { y, rotate }}
           aria-hidden="true"
         >
-          <img src="/images/orbit.svg" alt="" fetchPriority="high" />
+          <img
+            src="/images/orbit.webp"
+            srcSet="/images/orbit-640.webp 640w, /images/orbit.webp 1120w"
+            sizes="(max-width: 760px) 380px, (max-width: 1100px) 50vw, 560px"
+            width="1120"
+            height="1120"
+            alt=""
+            fetchPriority="high"
+          />
           <span className="art-coordinate">
             FIG. 01 / A CHANGE IN PERSPECTIVE
           </span>
-        </motion.div>
+        </ScrollVisual>
       </div>
       <div className="hero-footer">
         <span>Based in California</span>
@@ -173,13 +255,6 @@ function Hero() {
 
 function Project({ project, index }) {
   const ref = useRef(null);
-  const reduced = useContext(MotionPreference);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ["-7%", "7%"]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.12, 1, 1.08]);
   return (
     <article
       className={`project project-${project.id}`}
@@ -187,11 +262,13 @@ function Project({ project, index }) {
       id={project.id}
     >
       <div className="project-image">
-        <motion.img
+        <ScrollVisual
+          kind="project"
+          target={ref}
+          image
           src={project.image}
           alt={project.alt}
           loading="lazy"
-          style={reduced ? {} : { y, scale }}
         />
         <div className="image-topline">
           <span>Selected work / 0{index + 1}</span>
@@ -262,11 +339,6 @@ function ImageRibbon() {
   const trackRef = useRef(null);
   const reduced = useContext(MotionPreference);
   const [distance, setDistance] = useState(0);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
-  const x = useTransform(scrollYProgress, [0, 1], [0, -distance]);
   const moveGallery = (direction) => {
     const section = ref.current;
     if (window.matchMedia("(max-width:760px)").matches) {
@@ -299,7 +371,7 @@ function ImageRibbon() {
     observer.observe(trackRef.current);
     measure();
     return () => observer.disconnect();
-  }, []);
+  }, [reduced]);
   return (
     <section
       className={`ribbon-section ${reduced ? "motion-off" : ""}`}
@@ -334,10 +406,12 @@ function ImageRibbon() {
             </button>
           </div>
         </div>
-        <motion.div
+        <ScrollVisual
+          kind="ribbon"
+          target={ref}
+          distance={distance}
           className="ribbon-track"
           ref={trackRef}
-          style={reduced ? {} : { x }}
         >
           <figure>
             <img
@@ -375,7 +449,7 @@ function ImageRibbon() {
               <p>4+ years of instruction. Patience, repeated.</p>
             </figcaption>
           </figure>
-        </motion.div>
+        </ScrollVisual>
       </div>
     </section>
   );
@@ -568,39 +642,32 @@ export default function App() {
   const systemReduced = useReducedMotion();
   const [motionPaused, setMotionPaused] = useState(false);
   const reduced = systemReduced || motionPaused;
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
-  useEffect(() => {
-    if (reduced) return;
-    const lenis = new Lenis({
-      autoRaf: true,
-      lerp: 0.085,
-      anchors: { offset: -95 },
-    });
-    return () => lenis.destroy();
-  }, [reduced]);
   return (
     <MotionPreference.Provider value={reduced}>
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
-      <motion.div
-        className="scroll-progress"
-        style={{ scaleX: reduced ? scrollYProgress : scaleX }}
-        aria-hidden="true"
-      />
-      <Navigation />
-      <main id="main">
-        <Hero />
-        <Work />
-        <About />
-        <ImageRibbon />
-        <Experience />
-      </main>
-      <Contact
-        onToggleMotion={() => setMotionPaused((paused) => !paused)}
-        motionLocked={systemReduced}
-      />
+      <div
+        className={`portfolio ${nativeScroll ? "native-scroll" : "fallback-scroll"} ${reduced ? "motion-reduced" : "motion-enabled"}`}
+      >
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        {nativeScroll && !reduced ? (
+          <div className="scroll-progress" aria-hidden="true" />
+        ) : (
+          <ProgressFallback />
+        )}
+        <Navigation />
+        <main id="main">
+          <Hero />
+          <Work />
+          <About />
+          <ImageRibbon />
+          <Experience />
+        </main>
+        <Contact
+          onToggleMotion={() => setMotionPaused((paused) => !paused)}
+          motionLocked={systemReduced}
+        />
+      </div>
     </MotionPreference.Provider>
   );
 }
