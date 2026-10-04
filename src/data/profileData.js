@@ -1,293 +1,137 @@
+// Content source: ArjunResumeSC4.pdf, supplied by Arjun on October 3, 2026.
 export const profile = {
-  name: 'Arjun Ramesh',
-  headline: 'Senior at California High School • Web Developer • AI/ML Builder • UI/UX Designer',
-  shortHeadline: 'Web developer, AI/ML builder, and design-minded high-school senior.',
-  location: 'San Ramon, California, United States',
-  email: 'arjunramesh8002@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/arjun-ramesh-b19481288',
-  sourceNote:
-    'This portfolio showcases projects, skills, and experience crafted to highlight web development, AI/ML work, and community impact.',
-  heroSummary:
-    'I build polished, human-centered technology across web, AI, accessibility, games, and social-impact projects — combining product instincts with hands-on engineering and leadership.',
-  aboutIntro:
-    'Arjun Ramesh is a San Ramon-based high-school senior who blends web development, AI/ML experimentation, UI/UX design, and community leadership. His profile shows a builder with range: leading a fundraising platform for underprivileged kids, developing AI-driven game systems, designing LLM-powered commerce experiences, building assistive technology programs, and competing with autonomous driving agents in CARLA.',
-  aboutCloser:
-    'Across hackathons, volunteer work, Boy Scouts, Taekwondo instruction, Carnatic vocal performance, and entrepreneurship programs, Arjun’s story is anchored in discipline, service, creativity, and a strong bias toward building useful products.',
-  heroStats: [
-    { value: '2+ yrs', label: 'Web development at HelpingHands' },
-    { value: '4', label: 'Hackathon honors listed' },
-    { value: '5', label: 'AI / CS certifications listed' },
-  ],
-  themes: [
-    {
-      title: 'AI products with UX taste',
-      description: 'LLM features, MCP workflows, AI game systems, neural-network workshops, and human-centered UI/UX.',
-    },
-    {
-      title: 'Technology for social impact',
-      description: 'Fundraising for underprivileged kids, accessibility work for visually impaired communities, and volunteer leadership.',
-    },
-    {
-      title: 'Competitive builder energy',
-      description: 'Hackathon wins, autonomous racing, entrepreneurship programs, and fast-moving product projects.',
-    },
-    {
-      title: 'Long-term craft and discipline',
-      description: 'Boy Scouts, Taekwondo black belt, teaching assistant work, and Carnatic vocal performance over many years.',
-    },
-  ],
-}
-
-export const experience = [
-  {
-    company: 'HelpingHands',
-    title: 'Web Developer',
-    dates: 'August 2023 — Present',
-    duration: '2 years 11 months',
-    location: 'Chennai, Tamil Nadu, India',
-    category: 'Web • Social Impact',
-    bullets: [
-      'Leading development of a crowd-fundraising app and website for underprivileged kids in Chennai.',
-      'Creating engaging events and showcasing successful fundraisers to raise funds for specific causes.',
-      'Preparing the app for upcoming availability on the App Store.',
-    ],
-  },
-  {
-    company: 'Unity',
-    title: 'Game Dev and Design',
-    dates: 'August 2024 — Present',
-    duration: '1 year 11 months',
-    location: 'San Ramon, California',
-    category: 'Games • AI Systems',
-    bullets: [
-      'Developing a strategy game with AI implementations and extensive resource management systems.',
-    ],
-  },
-  {
-    company: 'True Fit',
-    title: 'AI/ML Engineer',
-    dates: 'July 2025 — November 2025',
-    duration: '5 months',
-    location: 'San Ramon, California',
-    category: 'AI • UI/UX',
-    bullets: [
-      'Led UI/UX design for TrueFit Clothing Company, building responsive, user-centered interfaces to improve usability and customer experience.',
-      'Implemented MCP server architecture to support scalable AI workflows and efficient data orchestration.',
-      'Integrated LLM-powered features for intelligent recommendations and personalized user interactions.',
-    ],
-  },
-  {
-    company: 'Blindev',
-    title: 'Vice President',
-    dates: 'April 2024 — November 2025',
-    duration: '1 year 8 months',
-    location: 'California, United States',
-    category: 'Leadership • Accessibility',
-    bullets: [
-      'Organized and led programs supporting individuals with disabilities in the Bay Area.',
-      'Worked on projects involving a Raspberry Pi 4 Model B and attached camera module.',
-      'Co-hosted and judged Hack for Hope, awarded $200 in prizes, and led a neural-networks workshop focused on visually impaired communities.',
-    ],
-  },
-  {
-    company: 'University of California, Berkeley',
-    title: 'ROAR Racing Competitor',
-    dates: 'June 2025 — July 2025',
-    duration: '2 months',
-    location: 'Berkeley / Remote Simulation',
-    category: 'Autonomous Systems',
-    bullets: [
-      'Designed and implemented a Python-based AI driving agent in CARLA for UC Berkeley’s Summer 2025 ROAR Simulation Racing Series.',
-      'Focused on autonomous laps on Monza v1.1 using waypoint navigation, PID control tuning, and real-time vehicle telemetry integration.',
-    ],
-  },
-  {
-    company: 'Junior Achievement of Northern California',
-    title: 'JA Summer Leadership Program',
-    dates: 'June 2024 — July 2024',
-    duration: '2 months',
-    location: 'San Francisco, California',
-    category: 'Leadership • Business',
-    bullets: [
-      'Job-shadowed at top companies in San Francisco to learn office dynamics, technologies, and market strategies.',
-      'Participated in workshops and a Social Innovation Challenge, strengthening creative problem-solving skills.',
-    ],
-  },
-  {
-    company: 'Junior Achievement USA',
-    title: 'Sales Marketing Management',
-    dates: 'October 2023 — May 2024',
-    duration: '8 months',
-    location: 'California, United States',
-    category: 'Entrepreneurship',
-    bullets: [
-      'Worked in a Bay Area student entrepreneurship program where teams created products and competed against one another.',
-    ],
-  },
-  {
-    company: 'Boy Scouts of America',
-    title: 'Boy Scouts of America',
-    dates: 'April 2016 — Present',
-    duration: '10 years 3 months',
-    location: 'California, United States',
-    category: 'Service • Leadership',
-    bullets: ['Life Scout, soon to be Eagle Scout in Troop 84.'],
-  },
-  {
-    company: 'ATA American Taekwondo Association',
-    title: 'Taekwondo Instructor / Black Belt',
-    dates: 'February 2016 — Present',
-    duration: '10 years 5 months',
-    location: 'California, United States',
-    category: 'Teaching • Discipline',
-    bullets: [
-      'Earned First Degree Black Belt after thousands of hours of practice, determination, and persistence.',
-      'Continued as a teaching assistant after earning black belt, guiding young students in form and technique while supporting the lead instructor.',
-    ],
-  },
-  {
-    company: 'Lakshmi Music Academy',
-    title: 'Carnatic Vocalist',
-    dates: 'July 2016 — Present',
-    duration: '10 years',
-    location: 'San Ramon, California',
-    category: 'Performance • Culture',
-    bullets: [
-      'Trained in Carnatic vocal music for 8 years, earning “Outstanding” distinctions in the first two levels of formal examinations.',
-      'Performed at San Ramon Cultural Community Center, Rajarajeshwari Temple, Sai Baba Temple, and Bridge Academy’s Margazhi Utsavam 2025.',
-    ],
-  },
-]
+  name: "Arjun Ramesh",
+  email: "arjunramesh8002@gmail.com",
+  github: "https://github.com/arjunram2008",
+  linkedin: "https://www.linkedin.com/in/arjun-ramesh-b19481288",
+};
 
 export const projects = [
   {
-    title: 'HelpingHands Fundraising Platform',
-    kicker: 'Social-impact web/app product',
+    id: "true-fit",
+    title: "True Fit",
+    category: "AI / Commerce / Interaction",
+    year: "2025",
+    image: "/images/truefit.svg",
+    alt: "An editorial visual study of fashion discovery, with a sculptural garment and connected recommendation nodes",
+    deck: "A better way to find your fit.",
     description:
-      'A crowd-fundraising experience for underprivileged kids in Chennai, centered on event storytelling, cause pages, and successful fundraiser showcases.',
-    tags: ['Web Design', 'Fundraising UX', 'App Product', 'Social Impact'],
+      "I connected language models to the shopping experience, then built the interfaces that let people explore. Eight MCP tools, four recommendation features, and interactive views across more than 50 products.",
+    metric: "25%",
+    metricLabel: "improvement in clothing-discovery personalization",
+    tags: ["LLM integration", "MCP", "Three.js", "UI/UX"],
+    detail:
+      "As an AI/ML Engineer from July to November 2025, I integrated eight MCP tools with application data and services. Four LLM-powered features tailored recommendations to shopper preferences, while responsive Three.js interfaces supported interactive clothing exploration.",
   },
   {
-    title: 'AI Strategy Game',
-    kicker: 'Game systems + AI',
+    id: "helpinghands",
+    title: "HelpingHands",
+    category: "Full stack / Community / Design",
+    year: "2023 to now",
+    image: "/images/helpinghands.svg",
+    alt: "A warm green visual study with interlocking forms symbolizing community and a small fundraising interface illustration",
+    deck: "Small actions. More possibility.",
     description:
-      'A strategy game project with AI implementations and extensive resource-management mechanics, listed under Unity game development and design.',
-    tags: ['Unity', 'AI Systems', 'Game Design', 'Resource Management'],
+      "A crowdfunding platform for underprivileged children in Chennai. I developed 17 web and mobile workflows to make finding a cause and supporting it feel straightforward.",
+    metric: "$3,000+",
+    metricLabel: "raised with help from the platform",
+    tags: ["Full-stack development", "Web & mobile", "Fundraising UX"],
+    detail:
+      "Since August 2023, my work has combined full-stack engineering and UI/UX across cause-specific fundraising flows. The aim is simple: help people understand a cause, take action, and see where their support goes.",
   },
   {
-    title: 'TrueFit Intelligent Shopping UX',
-    kicker: 'AI commerce interface',
+    id: "roar",
+    title: "Finding the line",
+    category: "Autonomous systems / Simulation",
+    year: "2025",
+    image: "/images/racing.svg",
+    alt: "An overhead illustration of a racing circuit with an autonomous vehicle, a waypoint path, and telemetry markings",
+    deck: "An autonomous agent. A thousand small corrections.",
     description:
-      'Responsive, user-centered interfaces paired with MCP server architecture and LLM-powered recommendation flows for personalized interactions.',
-    tags: ['UI/UX', 'MCP', 'LLMs', 'AI Recommendations'],
+      "For UC Berkeley’s ROAR competition, I built a Python driving agent in CARLA. Waypoint navigation, PID tuning, and live telemetry helped it stay on the Monza v1.1 track.",
+    metric: "30%",
+    metricLabel: "fewer off-track incidents after tuning",
+    tags: ["Python", "CARLA", "PID control", "Telemetry"],
+    detail:
+      "Built in June and July 2025. I used telemetry to understand where the agent lost stability, then adjusted the PID controller to reduce off-track incidents. The project turned control theory into something I could watch, measure, and improve lap by lap.",
   },
-  {
-    title: 'ROAR Autonomous Racing Agent',
-    kicker: 'Python + CARLA simulation',
-    description:
-      'A Python AI driving agent for UC Berkeley’s ROAR Simulation Racing Series, tuned around waypoint navigation, PID control, and live telemetry.',
-    tags: ['Python', 'CARLA', 'PID Control', 'Telemetry'],
+];
 
+export const experience = [
+  {
+    id: "randlab",
+    company: "RANDLab, UC Santa Cruz",
+    title: "Undergraduate Researcher",
+    dates: "Sep. 2026 to present",
+    description:
+      "I investigate censorship devices across 23+ countries through network measurement and traffic analysis, looking for signs of connection tampering and deep packet inspection.",
   },
   {
-    title: 'Blindev Assistive Tech Programs',
-    kicker: 'Accessibility + hardware',
+    id: "acm",
+    company: "ACM, UC Santa Cruz",
+    title: "Lead Hackathon Coordinator",
+    dates: "Oct. 2026 to present",
     description:
-      'Leadership work supporting people with disabilities through projects involving Raspberry Pi 4 Model B, camera modules, and neural-network education.',
-    tags: ['Accessibility', 'Raspberry Pi 4', 'Camera Module', 'Neural Networks'],
+      "I coordinate logistics, technical programming, and outreach for 100+ participants and 30+ teams at a hackathon sponsored by Cisco, Google, and Baskin Engineering. With ACM officers and mentors, I’ve also hosted 30+ technical workshops.",
   },
-]
+  {
+    id: "truefit",
+    company: "True Fit",
+    title: "AI/ML Engineer",
+    dates: "Jul. to Nov. 2025",
+    description:
+      "I integrated eight MCP tools, built four LLM-powered recommendation features, and developed responsive Three.js interfaces across 50+ product views. The work improved clothing-discovery personalization by 25%.",
+  },
+  {
+    id: "helpinghands",
+    company: "HelpingHands",
+    title: "Web Developer",
+    dates: "Aug. 2023 to present",
+    description:
+      "I develop the web and mobile experience for a crowdfunding platform supporting underprivileged children in Chennai. Seventeen workflows and $3,000+ raised connect the engineering work to a tangible community outcome.",
+  },
+];
 
 export const skills = [
   {
-    category: 'Featured Skills',
-    items: ['Anthropic Claude', 'Claude Skills', 'Web Design'],
+    category: "Languages & web",
+    items: [
+      "Python",
+      "JavaScript",
+      "C++",
+      "MATLAB",
+      "HTML/CSS",
+      "React",
+      "Node.js",
+    ],
   },
   {
-    category: 'AI & Machine Learning',
-    items: ['Generative AI', 'AI Fluency', 'LLM-powered features', 'MCP server architecture', 'Neural networks', 'AI game systems'],
+    category: "AI & systems",
+    items: [
+      "LLMs",
+      "MCP",
+      "Neural networks",
+      "Claude",
+      "Prompt engineering",
+      "Raspberry Pi",
+      "CARLA",
+      "PID control",
+    ],
   },
   {
-    category: 'Programming & Technical Tools',
-    items: ['Python', 'CARLA', 'PID control', 'Vehicle telemetry', 'Raspberry Pi 4 Model B', 'Camera modules', 'Unity'],
+    category: "Design & development",
+    items: [
+      "UI/UX",
+      "Full-stack development",
+      "Interactive interfaces",
+      "Waypoint navigation",
+    ],
   },
-  {
-    category: 'Design & Product',
-    items: ['UI/UX design', 'Responsive interfaces', 'Fundraising UX', 'Resource management systems', 'Customer experience'],
-  },
-  {
-    category: 'Business, Leadership & Community',
-    items: ['Program leadership', 'Workshop facilitation', 'Hackathon judging', 'Entrepreneurship', 'Sales marketing management', 'Teaching assistantship'],
-  },
-  {
-    category: 'Languages & Creative Discipline',
-    items: ['Tamil — Native or bilingual', 'Sanskrit — Full professional', 'Spanish — Limited working', 'Carnatic vocal performance'],
-  },
-]
-
-export const education = [
-  {
-    school: 'California High School (San Ramon, CA)',
-    degree: 'High School',
-    dates: '2022 — 2026',
-    details: 'Senior, pursuing computer science and design.',
-  },
-  {
-    school: 'University of California, Berkeley',
-    degree: 'Computer Science',
-    dates: 'June 2023 — July 2023',
-    details: 'Summer program focused on computer science fundamentals and hands-on projects.',
-  },
-  {
-    school: 'Samskrita Bharati',
-    degree: 'Sanskrit and Classical Indian Languages, Literatures, and Linguistics',
-    dates: 'August 2021 — May 2024',
-    details: 'Formal language and classical studies listed in education.',
-  },
-  {
-    school: 'Brigham Young University',
-    degree: 'Online Coursework',
-    dates: 'TBD',
-    details: 'Additional formal coursework and learning path.',
-    placeholder: true,
-  },
-]
-
-export const certifications = [
-  'AP Computer Science (Python Certification)',
-  'What Is Generative AI?',
-  'Certificate of Completion: AI Fluency Framework & Foundations',
-  'AI Scholars',
-  'Certificate of Completion: Claude 101',
-]
+];
 
 export const awards = [
-  '3rd Place at LancerHacks VII',
-  'Best Website at Berkeley ANova Hacks',
-  'Finalist and best UI/UX at HackaKhan',
-  'Winner of the CodeForCause Track at Milpitas Hacks',
-  'Volunteer Appreciation Award',
-]
-
-export const highlights = [
-  {
-    metric: '4',
-    label: 'Hackathon honors',
-    detail: 'Including best website, best UI/UX finalist recognition, and CodeForCause track win.',
-  },
-  {
-    metric: '5',
-    label: 'AI / CS certifications',
-    detail: 'Python, generative AI, AI fluency, AI Scholars, and Claude 101 credentials listed.',
-  },
-  {
-    metric: '10+',
-    label: 'Years of service & craft',
-    detail: 'Long-running commitments across Scouts, Taekwondo, and Carnatic vocal music.',
-  },
-  {
-    metric: '$200',
-    label: 'Hack for Hope prizes',
-    detail: 'Awarded to top solutions during Blindev accessibility-focused hackathon work.',
-  },
-]
+  { name: "Berkeley ANova Hacks", result: "Best Website" },
+  { name: "LancerHacks VII", result: "3rd Place" },
+  { name: "Milpitas Hacks", result: "CodeForCause" },
+  { name: "HackaKhan", result: "Finalist / Best UI/UX" },
+];

@@ -1,16 +1,39 @@
-# React + Vite
+# Arjun Ramesh
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio about engineering, research, and making things. Built with React, Vite, Motion, and Lenis, with original SVG illustrations.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm ci
+npm run dev
+```
 
-## React Compiler
+`npm run build` creates the production site in `dist`. `npm run preview` serves the production build. `npm run lint` checks the source.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Content
 
-## Expanding the ESLint configuration
+The biography, experience, skills, awards, and project outcomes come from `ArjunResumeSC4.pdf`, supplied October 3, 2026. Edit `src/data/profileData.js` for project and experience updates. The downloadable resume is `public/Arjun-Ramesh-Resume.pdf`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Project artwork is illustrative, not a screenshot of a shipped product. All illustrations live in `public/images`.
+
+## Motion and accessibility
+
+- Lenis smooths desktop wheel scrolling while preserving native touch scrolling and anchors.
+- Motion drives project-image parallax, the hero sculpture, and viewport reveals.
+- The desktop image ribbon moves horizontally as the page scrolls. Mobile uses a native swipeable gallery.
+- Reduced motion disables Lenis, parallax, reveals, and pinned scrolling. The ribbon becomes a static gallery.
+- A footer control lets visitors reduce motion for the current visit. System reduced-motion preferences are respected automatically.
+- Navigation, project details, and experience disclosures support keyboard use. The mobile menu closes with Escape.
+
+## Validation
+
+The existing responsive smoke suite is updated for this design:
+
+```sh
+npx playwright test qa-responsive.spec.mjs
+```
+
+Run the local server on port 5173 first. The suite covers mobile, tablet, desktop, resume access, menus, disclosures, content, scroll-driven gallery movement, and reduced-motion layout.
+
+Design references studied: [Dennis Snellenberg](https://dennissnellenberg.com) for typographic scale and restrained interaction; [Studio Freight](https://studiofreight.com) for editorial composition; [Bruno Simon](https://bruno-simon.com) for personality in a technical portfolio. No reference artwork or copy is reused.
